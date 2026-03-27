@@ -4,28 +4,9 @@
    ========================================================= */
 
 // ── Navbar: scroll shadow + active link ──────────────────
-function scrollToSection(id) {
-  const element = document.getElementById(id);
-  if (element) {
-    element.scrollIntoView({ behavior: "smooth" });
-  }
-}
 
-function showModal(type) {
-  const modal = document.getElementById(type + "Modal");
-  if (modal) {
-    modal.classList.add("active");
-    document.body.style.overflow = "hidden";
-  }
-}
 
-function closeModal(type) {
-  const modal = document.getElementById(type + "Modal");
-  if (modal) {
-    modal.classList.remove("active");
-    document.body.style.overflow = "";
-  }
-}
+
 const navbar = document.getElementById('navbar');
 const navLinks = document.querySelectorAll('.nav-link');
 const sections = document.querySelectorAll('section[id]');
