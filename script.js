@@ -20,7 +20,7 @@ import {
 
 // 🔥 FIREBASE CONFIG
 const firebaseConfig = {
-  apiKey: "AIzaSyC9fNVtOrR_VKUNXFXhiG8PJzs_JyXMVRQ",
+  apiKey: "AIzaSyC9fNVtOrR_VKUNXfXhiG8PJzs_JyXMVRQ",
   authDomain: "ece-connect-d2df7.firebaseapp.com",
   projectId: "ece-connect-d2df7",
   storageBucket: "ece-connect-d2df7.appspot.com",
