@@ -104,6 +104,32 @@ function showToast(message, duration = 3000) {
 }
 
 // ── Registration Form ─────────────────────────────────────
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword }
+from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+
+const auth = getAuth();
+
+function signup(email, password) {
+  createUserWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      alert("Account created successfully!");
+      console.log(userCredential.user);
+    })
+    .catch((error) => {
+      alert(error.message);
+    });
+}
+
+function login(email, password) {
+  signInWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      alert("Login successful!");
+      console.log(userCredential.user);
+    })
+    .catch((error) => {
+      alert(error.message);
+    });
+}
 function handleRegister(event) {
   event.preventDefault();
 
@@ -125,7 +151,8 @@ function handleRegister(event) {
   }
 
   // Simulate successful registration
-  showToast(`🎉 Welcome to ECE Connect, ${name}! Account created successfully.`, 4000);
+  signup(email, password);
+showToast(`🎉 Welcome to ECE Connect, ${name}!`, 4000);
 
   // Reset form
   event.target.reset();
@@ -134,7 +161,13 @@ function handleRegister(event) {
 // ── Login Form ────────────────────────────────────────────
 function handleLogin(event) {
   event.preventDefault();
-  showToast('✅ Logged in successfully! Welcome back.', 3500);
+
+  const email = document.querySelector("#loginModal input[type='email']").value;
+  const password = document.querySelector("#loginModal input[type='password']").value;
+
+  login(email, password);
+
+  showToast('✅ Logged in successfully!', 3500);
   closeModal('login');
   event.target.reset();
 }
@@ -263,3 +296,20 @@ navLinks.forEach(link => {
 // ── Init ──────────────────────────────────────────────────
 console.log('%c⚡ ECE Connect', 'color:#2563eb;font-size:1.2rem;font-weight:bold');
 console.log('%cPVP Siddhartha Institute · ECE Department', 'color:#64748b');
+function registerUser(event) {
+  event.preventDefault();
+
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
+
+  signup(email, password);
+}
+
+function loginUser(event) {
+  event.preventDefault();
+
+  const email = document.querySelector("#loginModal input[type='email']").value;
+  const password = document.querySelector("#loginModal input[type='password']").value;
+
+  login(email, password);
+}
