@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Meta & Title -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ECE CONNECT – Student Collaboration Platform</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Google Fonts: Syne (display) + DM Sans (body) -->
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet" />
+  <!-- Remix Icons for social + UI -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-brand">
+      <span class="brand-icon"><i class="ri-circuit-line"></i></span>
+      <span class="brand-name">ECE<span class="accent">CONNECT</span></span>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home" class="nav-link active">Home</a></li>
+      <li><a href="#projects" class="nav-link">Projects</a></li>
+      <li><a href="#study-groups" class="nav-link">Study Groups</a></li>
+      <li><a href="#students" class="nav-link">Students</a></li>
+      <li><a href="#events" class="nav-link">Events</a></li>
+      <li><a href="#register" class="nav-btn">Login</a></li>
+    </ul>
+  </nav>
+
+  <!-- ===== HERO / LANDING ===== -->
+  <section class="hero" id="home">
+    <!-- College identity strip -->
+    <div class="college-banner">
+      <span class="college-name">PRASAD V. POTLURI SIDDHARTHA INSTITUTE OF TECHNOLOGY</span>
+      <span class="dept-name">DEPARTMENT OF ELECTRONICS AND COMMUNICATION ENGINEERING</span>
+    </div>
+
+    <div class="hero-inner">
+      <!-- Decorative blobs -->
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+
+      <div class="hero-content">
+        <div class="hero-badge"><i class="ri-graduation-cap-fill"></i> PVP Siddhartha Institute · ECE Dept</div>
+        <h1 class="hero-title">
+          ECE<br />
+          <span class="hero-title-accent">CONNECT</span>
+        </h1>
+        <p class="hero-tagline">Student Collaboration Platform</p>
+        <p class="hero-desc">
+          A platform for ECE students to connect, collaborate on projects,
+          and prepare for exams together.
+        </p>
+        <div class="hero-actions">
+          <button class="btn btn-primary" onclick="scrollToSection('register')">
+            <i class="ri-user-add-line"></i> Register
+          </button>
+          <button class="btn btn-outline" onclick="showModal('login')">
+            <i class="ri-login-box-line"></i> Login
+          </button>
+          <button class="btn btn-ghost" onclick="scrollToSection('students')">
+            <i class="ri-team-line"></i> Explore Students
+          </button>
+        </div>
+        <div class="hero-stats">
+          <div class="stat"><span class="stat-num" data-target="320">0</span><span class="stat-label">Students</span></div>
+          <div class="stat-divider"></div>
+          <div class="stat"><span class="stat-num" data-target="48">0</span><span class="stat-label">Projects</span></div>
+          <div class="stat-divider"></div>
+          <div class="stat"><span class="stat-num" data-target="30">0</span><span class="stat-label">Study Groups</span></div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="circuit-card">
+          <div class="cc-header">
+            <span class="cc-dot green"></span>
+            <span class="cc-dot yellow"></span>
+            <span class="cc-dot red"></span>
+          </div>
+          <div class="cc-body">
+            <div class="cc-avatar"><i class="ri-user-3-line"></i></div>
+            <div class="cc-info">
+              <div class="cc-line long"></div>
+              <div class="cc-line short"></div>
+            </div>
+            <span class="cc-badge">4th Year · ECE</span>
+          </div>
+          <div class="cc-tags">
+            <span class="tag">VLSI</span><span class="tag">Python</span><span class="tag">IoT</span>
+          </div>
+          <div class="cc-footer">
+            <span><i class="ri-folder-5-line"></i> 3 Projects</span>
+            <span><i class="ri-group-line"></i> 2 Groups</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FEATURES ===== -->
+  <section class="features" id="features">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Why ECE Connect?</span>
+        <h2 class="section-title">Everything You Need to <span class="accent">Succeed</span></h2>
+        <p class="section-sub">Built exclusively for ECE students of PVP Siddhartha Institute</p>
+      </div>
+      <div class="features-grid">
+        <!-- Feature Card 1 -->
+        <div class="feature-card" style="--delay:0s">
+          <div class="feat-icon-wrap" style="--clr:#2563eb">
+            <i class="ri-user-heart-line"></i>
+          </div>
+          <h3>Student Networking</h3>
+          <p>Connect with classmates across all years and sections. Build your professional circle right from campus.</p>
+          <a href="#students" class="feat-link">Explore Students <i class="ri-arrow-right-line"></i></a>
+        </div>
+        <!-- Feature Card 2 -->
+        <div class="feature-card" style="--delay:.1s">
+          <div class="feat-icon-wrap" style="--clr:#16a34a">
+            <i class="ri-code-s-slash-line"></i>
+          </div>
+          <h3>Project Collaboration</h3>
+          <p>Post your ideas, find teammates, and build real ECE projects together from concept to completion.</p>
+          <a href="#projects" class="feat-link">View Projects <i class="ri-arrow-right-line"></i></a>
+        </div>
+        <!-- Feature Card 3 -->
+        <div class="feature-card" style="--delay:.2s">
+          <div class="feat-icon-wrap" style="--clr:#d97706">
+            <i class="ri-book-open-line"></i>
+          </div>
+          <h3>Study Groups</h3>
+          <p>Form or join groups to prepare for semester exams, share notes, and solve problems as a team.</p>
+          <a href="#study-groups" class="feat-link">Join a Group <i class="ri-arrow-right-line"></i></a>
+        </div>
+        <!-- Feature Card 4 -->
+        <div class="feature-card" style="--delay:.3s">
+          <div class="feat-icon-wrap" style="--clr:#9333ea">
+            <i class="ri-chat-3-line"></i>
+          </div>
+          <h3>Discussion Forum</h3>
+          <p>Ask doubts, share resources, and get answers from seniors and peers on any ECE topic.</p>
+          <a href="#" class="feat-link">Open Forum <i class="ri-arrow-right-line"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROJECTS ===== -->
+  <section class="projects" id="projects">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Active Projects</span>
+        <h2 class="section-title">Collaborate on <span class="accent">Real Projects</span></h2>
+        <p class="section-sub">Join ongoing projects or post your own idea to find teammates</p>
+      </div>
+      <div class="projects-grid">
+
+        <div class="project-card">
+          <div class="proj-banner" style="--pclr:#2563eb">
+            <i class="ri-car-line"></i>
+          </div>
+          <div class="proj-body">
+            <div class="proj-meta">
+              <span class="proj-tag">IoT</span>
+              <span class="proj-tag">Hardware</span>
+            </div>
+            <h3 class="proj-title">IoT Smart Parking System</h3>
+            <p class="proj-desc">An embedded system using IR sensors and NodeMCU to detect parking slot availability and display status on a web dashboard in real-time.</p>
+            <div class="proj-team">
+              <div class="team-avatars">
+                <div class="tavatar" style="--bg:#60a5fa">A</div>
+                <div class="tavatar" style="--bg:#34d399">B</div>
+                <div class="tavatar" style="--bg:#fbbf24">C</div>
+              </div>
+              <span>4 members · 2 slots open</span>
+            </div>
+          </div>
+          <div class="proj-footer">
+            <button class="btn btn-sm btn-primary" onclick="joinProject(this)">
+              <i class="ri-user-add-line"></i> Join Project
+            </button>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="proj-banner" style="--pclr:#16a34a">
+            <i class="ri-camera-ai-line"></i>
+          </div>
+          <div class="proj-body">
+            <div class="proj-meta">
+              <span class="proj-tag">AI / ML</span>
+              <span class="proj-tag">Python</span>
+            </div>
+            <h3 class="proj-title">AI Based Attendance System</h3>
+            <p class="proj-desc">Face-recognition-powered attendance using OpenCV and deep learning. Automatically marks attendance and generates reports for faculty.</p>
+            <div class="proj-team">
+              <div class="team-avatars">
+                <div class="tavatar" style="--bg:#a78bfa">D</div>
+                <div class="tavatar" style="--bg:#f87171">E</div>
+              </div>
+              <span>3 members · 3 slots open</span>
+            </div>
+          </div>
+          <div class="proj-footer">
+            <button class="btn btn-sm btn-primary" onclick="joinProject(this)">
+              <i class="ri-user-add-line"></i> Join Project
+            </button>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="proj-banner" style="--pclr:#d97706">
+            <i class="ri-temp-hot-line"></i>
+          </div>
+          <div class="proj-body">
+            <div class="proj-meta">
+              <span class="proj-tag">Embedded</span>
+              <span class="proj-tag">Arduino</span>
+            </div>
+            <h3 class="proj-title">Embedded Temperature Monitoring</h3>
+            <p class="proj-desc">Arduino-based temperature and humidity monitoring with LCD display and alert system using DHT11 sensor for lab environment tracking.</p>
+            <div class="proj-team">
+              <div class="team-avatars">
+                <div class="tavatar" style="--bg:#fb923c">F</div>
+                <div class="tavatar" style="--bg:#4ade80">G</div>
+                <div class="tavatar" style="--bg:#818cf8">H</div>
+              </div>
+              <span>5 members · 1 slot open</span>
+            </div>
+          </div>
+          <div class="proj-footer">
+            <button class="btn btn-sm btn-primary" onclick="joinProject(this)">
+              <i class="ri-user-add-line"></i> Join Project
+            </button>
+          </div>
+        </div>
+
+      </div>
+      <div class="section-cta">
+        <button class="btn btn-outline" onclick="showToast('Project posting feature coming soon!')">
+          <i class="ri-add-circle-line"></i> Post Your Project Idea
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== STUDY GROUPS ===== -->
+  <section class="study-groups" id="study-groups">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Study Together</span>
+        <h2 class="section-title">Find Your <span class="accent">Study Group</span></h2>
+        <p class="section-sub">Prepare for semester exams with focused peer-learning groups</p>
+      </div>
+      <div class="groups-grid">
+
+        <div class="group-card">
+          <div class="group-icon" style="--gclr:#2563eb"><i class="ri-cpu-line"></i></div>
+          <div class="group-info">
+            <h3>Digital Signal Processing</h3>
+            <div class="group-meta-row">
+              <span class="gmeta"><i class="ri-file-text-line"></i> Mid-Semester Exam</span>
+              <span class="gmeta"><i class="ri-user-line"></i> 11 Members</span>
+            </div>
+            <div class="group-tags">
+              <span class="gtag">3rd Year</span>
+              <span class="gtag">ECE-A</span>
+            </div>
+          </div>
+          <button class="btn btn-sm btn-outline" onclick="joinGroup(this)">
+            <i class="ri-team-line"></i> Join Group
+          </button>
+        </div>
+
+        <div class="group-card">
+          <div class="group-icon" style="--gclr:#16a34a"><i class="ri-radio-line"></i></div>
+          <div class="group-info">
+            <h3>Analog Communications</h3>
+            <div class="group-meta-row">
+              <span class="gmeta"><i class="ri-file-text-line"></i> End Semester Exam</span>
+              <span class="gmeta"><i class="ri-user-line"></i> 8 Members</span>
+            </div>
+            <div class="group-tags">
+              <span class="gtag">2nd Year</span>
+              <span class="gtag">ECE-B</span>
+            </div>
+          </div>
+          <button class="btn btn-sm btn-outline" onclick="joinGroup(this)">
+            <i class="ri-team-line"></i> Join Group
+          </button>
+        </div>
+
+        <div class="group-card">
+          <div class="group-icon" style="--gclr:#9333ea"><i class="ri-circuit-line"></i></div>
+          <div class="group-info">
+            <h3>VLSI Design</h3>
+            <div class="group-meta-row">
+              <span class="gmeta"><i class="ri-file-text-line"></i> Internal Assessment</span>
+              <span class="gmeta"><i class="ri-user-line"></i> 14 Members</span>
+            </div>
+            <div class="group-tags">
+              <span class="gtag">4th Year</span>
+              <span class="gtag">All Sections</span>
+            </div>
+          </div>
+          <button class="btn btn-sm btn-outline" onclick="joinGroup(this)">
+            <i class="ri-team-line"></i> Join Group
+          </button>
+        </div>
+
+        <div class="group-card">
+          <div class="group-icon" style="--gclr:#d97706"><i class="ri-flashlight-line"></i></div>
+          <div class="group-info">
+            <h3>Electromagnetic Waves</h3>
+            <div class="group-meta-row">
+              <span class="gmeta"><i class="ri-file-text-line"></i> End Semester Exam</span>
+              <span class="gmeta"><i class="ri-user-line"></i> 9 Members</span>
+            </div>
+            <div class="group-tags">
+              <span class="gtag">2nd Year</span>
+              <span class="gtag">ECE-C</span>
+            </div>
+          </div>
+          <button class="btn btn-sm btn-outline" onclick="joinGroup(this)">
+            <i class="ri-team-line"></i> Join Group
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== STUDENTS ===== -->
+  <section class="students" id="students">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Your Batchmates</span>
+        <h2 class="section-title">Discover <span class="accent">Students</span></h2>
+        <p class="section-sub">Connect with fellow ECE students across all years and sections</p>
+      </div>
+      <div class="students-grid">
+        <div class="student-card">
+          <div class="stud-avatar" style="--sclr:#2563eb">RK</div>
+          <div class="stud-info">
+            <h4>Ravi Kumar</h4>
+            <span>3rd Year · Section A</span>
+            <div class="stud-skills"><span>Python</span><span>IoT</span><span>MATLAB</span></div>
+          </div>
+          <button class="btn btn-xs btn-primary" onclick="showToast('Connection request sent to Ravi!')">Connect</button>
+        </div>
+        <div class="student-card">
+          <div class="stud-avatar" style="--sclr:#16a34a">PS</div>
+          <div class="stud-info">
+            <h4>Priya Sharma</h4>
+            <span>4th Year · Section B</span>
+            <div class="stud-skills"><span>VLSI</span><span>Verilog</span><span>C</span></div>
+          </div>
+          <button class="btn btn-xs btn-primary" onclick="showToast('Connection request sent to Priya!')">Connect</button>
+        </div>
+        <div class="student-card">
+          <div class="stud-avatar" style="--sclr:#d97706">AR</div>
+          <div class="stud-info">
+            <h4>Anil Reddy</h4>
+            <span>2nd Year · Section C</span>
+            <div class="stud-skills"><span>Arduino</span><span>C++</span><span>PCB</span></div>
+          </div>
+          <button class="btn btn-xs btn-primary" onclick="showToast('Connection request sent to Anil!')">Connect</button>
+        </div>
+        <div class="student-card">
+          <div class="stud-avatar" style="--sclr:#9333ea">SN</div>
+          <div class="stud-info">
+            <h4>Sowmya Naidu</h4>
+            <span>3rd Year · Section A</span>
+            <div class="stud-skills"><span>DSP</span><span>Python</span><span>ML</span></div>
+          </div>
+          <button class="btn btn-xs btn-primary" onclick="showToast('Connection request sent to Sowmya!')">Connect</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EVENTS ===== -->
+  <section class="events" id="events">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Upcoming</span>
+        <h2 class="section-title">ECE <span class="accent">Events</span></h2>
+      </div>
+      <div class="events-list">
+        <div class="event-item">
+          <div class="event-date"><span class="eday">14</span><span class="emon">Apr</span></div>
+          <div class="event-details">
+            <h4>Project Expo 2025</h4>
+            <p>Showcase your final year projects. Open to all years for demo and feedback.</p>
+          </div>
+          <button class="btn btn-sm btn-outline" onclick="showToast('Registered for Project Expo!')">Register</button>
+        </div>
+        <div class="event-item">
+          <div class="event-date"><span class="eday">22</span><span class="emon">Apr</span></div>
+          <div class="event-details">
+            <h4>Workshop: VLSI with Cadence</h4>
+            <p>Hands-on session on VLSI circuit simulation using Cadence tools.</p>
+          </div>
+          <button class="btn btn-sm btn-outline" onclick="showToast('Registered for VLSI Workshop!')">Register</button>
+        </div>
+        <div class="event-item">
+          <div class="event-date"><span class="eday">05</span><span class="emon">May</span></div>
+          <div class="event-details">
+            <h4>Hackathon: ECE Innovate</h4>
+            <p>24-hour hackathon for building ECE-themed solutions. Form teams of 3–4.</p>
+          </div>
+          <button class="btn btn-sm btn-outline" onclick="showToast('Registered for ECE Hackathon!')">Register</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== REGISTRATION FORM ===== -->
+  <section class="register" id="register">
+    <div class="container">
+      <div class="register-wrapper">
+        <div class="register-left">
+          <span class="section-tag">Get Started</span>
+          <h2 class="register-title">Join <span class="accent">ECE Connect</span></h2>
+          <p>Create your profile and start collaborating with 320+ ECE students at PVP Siddhartha Institute.</p>
+          <ul class="reg-perks">
+            <li><i class="ri-check-line"></i> Connect with classmates & seniors</li>
+            <li><i class="ri-check-line"></i> Join or start project teams</li>
+            <li><i class="ri-check-line"></i> Create & find study groups</li>
+            <li><i class="ri-check-line"></i> Share resources & ask doubts</li>
+          </ul>
+        </div>
+        <div class="register-right">
+          <form class="reg-form" id="regForm" onsubmit="handleRegister(event)">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name"><i class="ri-user-line"></i> Full Name</label>
+                <input type="text" id="name" placeholder="e.g. Ravi Kumar" required />
+              </div>
+              <div class="form-group">
+                <label for="email"><i class="ri-mail-line"></i> College Email</label>
+                <input type="email" id="email" placeholder="student@pvpsiddhartha.ac.in" required />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="password"><i class="ri-lock-line"></i> Password</label>
+                <div class="pw-wrap">
+                  <input type="password" id="password" placeholder="Min. 8 characters" required />
+                  <button type="button" class="pw-toggle" onclick="togglePassword()"><i class="ri-eye-line" id="eyeIcon"></i></button>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="year"><i class="ri-calendar-line"></i> Year</label>
+                <select id="year" required>
+                  <option value="" disabled selected>Select Year</option>
+                  <option value="1">1st Year</option>
+                  <option value="2">2nd Year</option>
+                  <option value="3">3rd Year</option>
+                  <option value="4">4th Year</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="section"><i class="ri-team-line"></i> Section</label>
+                <input type="text" id="section" placeholder="e.g. A, B, C" required />
+              </div>
+              <div class="form-group">
+                <label for="skills"><i class="ri-code-s-slash-line"></i> Skills / Interests</label>
+                <input type="text" id="skills" placeholder="e.g. Python, VLSI, IoT" />
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full">
+              <i class="ri-user-add-line"></i> Create My Account
+            </button>
+            <p class="form-login-link">Already have an account? <a href="#" onclick="showModal('login')">Login here</a></p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="brand-icon large"><i class="ri-circuit-line"></i></div>
+        <div>
+          <div class="brand-name large">ECE<span class="accent">CONNECT</span></div>
+          <p class="footer-college">PRASAD V. POTLURI SIDDHARTHA INSTITUTE OF TECHNOLOGY</p>
+          <p class="footer-dept">DEPARTMENT OF ELECTRONICS AND COMMUNICATION ENGINEERING</p>
+        </div>
+      </div>
+      <div class="footer-links-grid">
+        <div class="footer-col">
+          <h5>Platform</h5>
+          <a href="#home">Home</a>
+          <a href="#projects">Projects</a>
+          <a href="#study-groups">Study Groups</a>
+          <a href="#students">Students</a>
+        </div>
+        <div class="footer-col">
+          <h5>Community</h5>
+          <a href="#events">Events</a>
+          <a href="#">Forum</a>
+          <a href="#">Resources</a>
+          <a href="#">Alumni</a>
+        </div>
+        <div class="footer-col">
+          <h5>Account</h5>
+          <a href="#register">Register</a>
+          <a href="#" onclick="showModal('login')">Login</a>
+          <a href="#">My Profile</a>
+          <a href="#">Settings</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="copyright">&copy; 2025 ECE Connect · PVP Siddhartha Institute · All rights reserved</p>
+      <div class="social-icons">
+        <a href="#" class="social-icon" title="GitHub"><i class="ri-github-fill"></i></a>
+        <a href="#" class="social-icon" title="LinkedIn"><i class="ri-linkedin-fill"></i></a>
+        <a href="#" class="social-icon" title="Instagram"><i class="ri-instagram-fill"></i></a>
+        <a href="#" class="social-icon" title="YouTube"><i class="ri-youtube-fill"></i></a>
+        <a href="#" class="social-icon" title="Email"><i class="ri-mail-fill"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== LOGIN MODAL ===== -->
+  <div class="modal-overlay" id="loginModal" onclick="closeModalOutside(event)">
+    <div class="modal">
+      <button class="modal-close" onclick="closeModal('login')"><i class="ri-close-line"></i></button>
+      <h3 class="modal-title">Welcome Back</h3>
+      <p class="modal-sub">Login to your ECE Connect account</p>
+      <form onsubmit="handleLogin(event)">
+        <div class="form-group">
+          <label><i class="ri-mail-line"></i> Email</label>
+          <input type="email" placeholder="your@email.com" required />
+        </div>
+        <div class="form-group" style="margin-top:1rem">
+          <label><i class="ri-lock-line"></i> Password</label>
+          <input type="password" placeholder="Your password" required />
+        </div>
+        <button type="submit" class="btn btn-primary btn-full" style="margin-top:1.5rem">Login</button>
+        <p class="form-login-link" style="text-align:center;margin-top:1rem">Don't have an account? <a href="#" onclick="closeModal('login');scrollToSection('register')">Register</a></p>
+      </form>
+    </div>
+  </div>
+
+  <!-- ===== TOAST ===== -->
+  <div class="toast" id="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
