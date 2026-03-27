@@ -120,10 +120,7 @@ function showToast(message, duration = 3000) {
 }
 
 // ── Registration Form ─────────────────────────────────────
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword }
-from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
 
-const auth = getAuth();
 
 function signup(email, password) {
   createUserWithEmailAndPassword(auth, email, password)
