@@ -4,22 +4,6 @@
    ========================================================= */
 
 // ── Navbar: scroll shadow + active link ──────────────────
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } 
-from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
-
-const firebaseConfig = {
-  apiKey: "AIzaSyC9fNVtOrR_VKUNXfXhiG8PJzs_JyXMVRQ",
-  authDomain: "ece-connect-d2df7.firebaseapp.com",
-  projectId: "ece-connect-d2df7",
-  storageBucket: "ece-connect-d2df7.appspot.com",
-  messagingSenderId: "1093595103388",
-  appId: "1:1093595103388:web:ff0ef47a46f9254c7c2d59",
-  measurementId: "G-NHLW1VF43S"
-};
-
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
 const navbar = document.getElementById('navbar');
 const navLinks = document.querySelectorAll('.nav-link');
 const sections = document.querySelectorAll('section[id]');
@@ -279,30 +263,3 @@ navLinks.forEach(link => {
 // ── Init ──────────────────────────────────────────────────
 console.log('%c⚡ ECE Connect', 'color:#2563eb;font-size:1.2rem;font-weight:bold');
 console.log('%cPVP Siddhartha Institute · ECE Department', 'color:#64748b');
-
-
-const auth = getAuth();
-
-// SIGN UP
-function signup(email, password) {
-  createUserWithEmailAndPassword(auth, email, password)
-  .then((userCredential) => {
-      alert("Account created successfully!");
-      console.log(userCredential.user);
-  })
-  .catch((error) => {
-      alert(error.message);
-  });
-}
-
-// LOGIN
-function login(email, password) {
-  signInWithEmailAndPassword(auth, email, password)
-  .then((userCredential) => {
-      alert("Login successful!");
-      console.log(userCredential.user);
-  })
-  .catch((error) => {
-      alert(error.message);
-  });
-}
