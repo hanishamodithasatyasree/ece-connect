@@ -438,7 +438,7 @@
           </ul>
         </div>
         <div class="register-right">
-          <form class="reg-form" id="regForm" onsubmit="handleRegister(event)">
+          <form class="reg-form" id="regForm" onsubmit="registerUser(event)">
             <div class="form-row">
               <div class="form-group">
                 <label for="name"><i class="ri-user-line"></i> Full Name</label>
@@ -541,7 +541,7 @@
       <button class="modal-close" onclick="closeModal('login')"><i class="ri-close-line"></i></button>
       <h3 class="modal-title">Welcome Back</h3>
       <p class="modal-sub">Login to your ECE Connect account</p>
-      <form onsubmit="handleLogin(event)">
+      <form onsubmit="loginUser(event)">
         <div class="form-group">
           <label><i class="ri-mail-line"></i> Email</label>
           <input type="email" placeholder="your@email.com" required />
