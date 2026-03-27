@@ -302,3 +302,9 @@ function joinGroup(btn) {
 
 console.log('%c⚡ ECE Connect', 'color:#2563eb;font-size:1.2rem;font-weight:bold');
 console.log('%cPVP Siddhartha Institute · ECE Department', 'color:#64748b');
+window.scrollToSection = scrollToSection;
+window.showModal = showModal;
+window.closeModal = closeModal;
+window.handleRegister = handleRegister;
+window.handleLogin = handleLogin;
+window.togglePassword = togglePassword;
